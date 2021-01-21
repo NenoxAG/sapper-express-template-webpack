@@ -18,7 +18,7 @@ The [Express.js](https://expressjs.com/) template for setting up a [Sapper](http
 For a webpack-based project, run
 
 ```bash
-npx degit "NenoxAG/sapper-express-template-webpack" my-app
+degit "NenoxAG/sapper-express-template-webpack" my-app
 ```
 
 [`degit`](https://github.com/Rich-Harris/degit) is a scaffolding tool that lets you create a directory from a branch in a repository.
