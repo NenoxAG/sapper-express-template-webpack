@@ -2,6 +2,10 @@
 
 The [Express.js](https://expressjs.com/) template for setting up a [Sapper](https://github.com/sveltejs/sapper) project.
 
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/NenoxAG/sapper-express-template-webpack/Node.js%20CI?style=for-the-badge)
+[![GitHub issues](https://img.shields.io/github/issues/NenoxAG/sapper-express-template-webpack?style=for-the-badge)](https://github.com/NenoxAG/sapper-express-template-webpack/issues)
+![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/github/NenoxAG/sapper-express-template-webpack?style=for-the-badge)
+[![GitHub license](https://img.shields.io/github/license/NenoxAG/sapper-express-template-webpack?style=for-the-badge)](https://github.com/NenoxAG/sapper-express-template-webpack)
 
 ## Getting started
 
