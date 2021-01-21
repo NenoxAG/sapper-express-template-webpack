@@ -1,17 +1,38 @@
-import sirv from 'sirv';
-import polka from 'polka';
+/*
+    Import necessary modules
+*/
+import * as httpServer from '../bin/httpServer';
+import * as express from 'express';
+import * as cookieParser from 'cookie-parser';
 import compression from 'compression';
+import sirv from 'sirv';
 import * as sapper from '@sapper/server';
 
-const { PORT, NODE_ENV } = process.env;
+/*
+    Load the port and the node environment from the .env file
+ */
+const {PORT, NODE_ENV} = process.env;
 const dev = NODE_ENV === 'development';
 
-polka() // You can also use Express
-	.use(
-		compression({ threshold: 0 }),
-		sirv('static', { dev }),
-		sapper.middleware()
-	)
-	.listen(PORT, err => {
-		if (err) console.log('error', err);
-	});
+/*
+    Instantiate the express app.
+ */
+const app = express();
+
+/*
+    Express specific middlewares
+ */
+app.use(express.urlencoded({extended: false}));
+app.use(cookieParser());
+
+/*
+    Sapper specific middlewares
+ */
+app.use(sirv('static', {dev}));
+app.use(compression({threshold: 0}));
+app.use(sapper.middleware());
+
+/*
+    Start the http server for the app
+ */
+httpServer.setupHttpServer(app);
